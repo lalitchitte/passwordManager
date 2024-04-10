@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
-  TextInput,
   TouchableOpacity,
   ScrollView,
   ToastAndroid,
@@ -11,6 +10,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Clipboard from '@react-native-clipboard/clipboard';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {TextInput} from 'react-native-paper';
 
 const App = () => {
   const [website, setWebsite] = useState('');
@@ -244,22 +244,31 @@ const App = () => {
           {editing ? 'Edit Password' : 'Add a Password'}
         </Text>
         <TextInput
+          mode="outlined"
+          outlineColor="black"
+          activeOutlineColor="green"
           style={styles.input}
-          placeholder="Website"
+          label="Website"
           value={website}
           onChangeText={text => setWebsite(text)}
         />
 
         <TextInput
           style={styles.input}
-          placeholder="Username"
+          mode="outlined"
+          outlineColor="black"
+          activeOutlineColor="green"
+          label="Username"
           value={username}
           onChangeText={text => setUsername(text)}
         />
 
         <TextInput
           style={styles.input}
-          placeholder="Password"
+          mode="outlined"
+          outlineColor="black"
+          activeOutlineColor="green"
+          label="Password"
           secureTextEntry={true}
           value={password}
           onChangeText={text => setPassword(text)}
@@ -366,7 +375,6 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 0, height: 0},
     shadowRadius: 10,
     shadowOpacity: 1,
-    elevation: 4,
   },
   submitButton: {
     backgroundColor: 'green',
